@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="比特币白皮书：一种点对点的电子现金系统 - 中本聪的原创论文，详细阐述了比特币的运作原理和技术基础">
+    <meta name="keywords" content="比特币,白皮书,中本聪,区块链,加密货币,电子现金,点对点支付,Bitcoin Genesis Address,比特币创世地址,1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa,Satoshi Wallet,中本聪钱包,Bitcoin,Blockchain,Cryptocurrency,P2P Payment">
+    <meta name="author" content="Satoshi Nakamoto">
+    <meta property="og:title" content="比特币白皮书 - Bitcoin: A Peer-to-Peer Electronic Cash System">
+    <meta property="og:description" content="比特币白皮书：一种点对点的电子现金系统 - 中本聪的原创论文，详细阐述了比特币的运作原理和技术基础">
+    <meta property="og:type" content="article">
+    <title>比特币白皮书 - Bitcoin: A Peer-to-Peer Electronic Cash System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="language-selector">
+            <select id="languageSelect">
+                <option value="zh">中文</option>
+                <option value="en">English</option>
+                <option value="ja">日本語</option>
+                <option value="ko">한국어</option>
+                <option value="es">Español</option>
+                <option value="fr">Français</option>
+                <option value="de">Deutsch</option>
+                <option value="it">Italiano</option>
+                <option value="pt">Português</option>
+                <option value="ru">Русский</option>
+                <option value="tr">Türkçe</option>
+                <option value="ar">العربية</option>
+                <option value="he">עברית</option>
+                <option value="hi">हिन्दी</option>
+                <option value="id">Bahasa Indonesia</option>
+                <option value="th">ไทย</option>
+                <option value="vi">Tiếng Việt</option>
+                <option value="fa">فارسی</option>
+                <option value="el">Ελληνικά</option>
+                <option value="pl">Polski</option>
+                <option value="nl">Nederlands</option>
+            </select>
+        </nav>
+    </header>
+
+    <main>
+        <h1>比特币：一种点对点的电子现金系统</h1>
+        <div class="genesis-quote" data-lang="zh">
+            <div class="original-quote">The Times 03/Jan/2009 Chancellor on brink of second bailout for banks.</div>
+            <div class="translated-quote">泰晤士报 2009年1月3日：财政大臣在实施第二轮银行紧急援助的边缘</div>
+        </div>
+        <div class="author">Satoshi Nakamoto</div>
+        <div class="date">2008年10月31日</div>
+
+        <section class="download-section">
+            <h2>下载比特币白皮书</h2>
+            <div class="download-grid">
+                <div class="download-item">
+                    <h3>中文版</h3>
+                    <a href="https://bitcoin.org/bitcoin_zh.pdf" class="download-button">PDF 下载</a>
+                </div>
+                <div class="download-item">
+                    <h3>English (原版)</h3>
+                    <a href="https://bitcoin.org/bitcoin.pdf" class="download-button">PDF Download</a>
+                </div>
+                <div class="download-item">
+                    <h3>日本語</h3>
+                    <a href="https://bitcoin.org/bitcoin_ja.pdf" class="download-button">PDF ダウンロード</a>
+                </div>
+                <div class="download-item">
+                    <h3>한국어</h3>
+                    <a href="https://bitcoin.org/bitcoin_ko.pdf" class="download-button">PDF 다운로드</a>
+                </div>
+                <div class="download-item">
+                    <h3>Español</h3>
+                    <a href="https://bitcoin.org/bitcoin_es.pdf" class="download-button">PDF Descargar</a>
+                </div>
+                <div class="download-item">
+                    <h3>Français</h3>
+                    <a href="https://bitcoin.org/bitcoin_fr.pdf" class="download-button">PDF Télécharger</a>
+                </div>
+                <div class="download-item">
+                    <h3>Deutsch</h3>
+                    <a href="https://bitcoin.org/bitcoin_de.pdf" class="download-button">PDF Herunterladen</a>
+                </div>
+                <div class="download-item">
+                    <h3>Italiano</h3>
+                    <a href="https://bitcoin.org/bitcoin_it.pdf" class="download-button">PDF Scarica</a>
+                </div>
+                <div class="download-item">
+                    <h3>Português</h3>
+                    <a href="https://bitcoin.org/bitcoin_pt.pdf" class="download-button">PDF Baixar</a>
+                </div>
+                <div class="download-item">
+                    <h3>Русский</h3>
+                    <a href="https://bitcoin.org/bitcoin_ru.pdf" class="download-button">PDF Скачать</a>
+                </div>
+                <div class="download-item">
+                    <h3>Türkçe</h3>
+                    <a href="https://bitcoin.org/bitcoin_tr.pdf" class="download-button">PDF İndir</a>
+                </div>
+                <div class="download-item">
+                    <h3>العربية</h3>
+                    <a href="https://bitcoin.org/bitcoin_ar.pdf" class="download-button">PDF تحميل</a>
+                </div>
+                <div class="download-item">
+                    <h3>עברית</h3>
+                    <a href="https://bitcoin.org/bitcoin_he.pdf" class="download-button">PDF הורדה</a>
+                </div>
+                <div class="download-item">
+                    <h3>हिन्दी</h3>
+                    <a href="https://bitcoin.org/bitcoin_hi.pdf" class="download-button">PDF डाउनलोड</a>
+                </div>
+                <div class="download-item">
+                    <h3>Bahasa Indonesia</h3>
+                    <a href="https://bitcoin.org/bitcoin_id.pdf" class="download-button">PDF Unduh</a>
+                </div>
+                <div class="download-item">
+                    <h3>ไทย</h3>
+                    <a href="https://bitcoin.org/bitcoin_th.pdf" class="download-button">PDF ดาวน์โหลด</a>
+                </div>
+                <div class="download-item">
+                    <h3>Tiếng Việt</h3>
+                    <a href="https://bitcoin.org/bitcoin_vi.pdf" class="download-button">PDF Tải xuống</a>
+                </div>
+                <div class="download-item">
+                    <h3>فارسی</h3>
+                    <a href="https://bitcoin.org/bitcoin_fa.pdf" class="download-button">PDF دانلود</a>
+                </div>
+                <div class="download-item">
+                    <h3>Ελληνικά</h3>
+                    <a href="https://bitcoin.org/bitcoin_el.pdf" class="download-button">PDF Λήψη</a>
+                </div>
+                <div class="download-item">
+                    <h3>Polski</h3>
+                    <a href="https://bitcoin.org/bitcoin_pl.pdf" class="download-button">PDF Pobierz</a>
+                </div>
+                <div class="download-item">
+                    <h3>Nederlands</h3>
+                    <a href="https://bitcoin.org/bitcoin_nl.pdf" class="download-button">PDF Downloaden</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="creator-info">
+                <p>联系：<a href="mailto:xiaowuleyi@gmail.com">xiaowuleyi@gmail.com</a></p> 
+                <div class="bitcoin-donation">比特币赞赏：<span class="bitcoin-address">1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa</span></div>
+            </div>
+            <div class="copyright">© Bitcoin Project 2009-2025 Released under the MIT license</div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>
