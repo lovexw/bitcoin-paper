@@ -3,157 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="比特币白皮书：一种点对点的电子现金系统 - 中本聪的原创论文，详细阐述了比特币的运作原理和技术基础">
-    <meta name="keywords" content="比特币,白皮书,中本聪,区块链,加密货币,电子现金,点对点支付,Bitcoin Genesis Address,比特币创世地址,1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa,Satoshi Wallet,中本聪钱包,Bitcoin,Blockchain,Cryptocurrency,P2P Payment">
-    <meta name="author" content="Satoshi Nakamoto">
-    <meta property="og:title" content="比特币白皮书 - Bitcoin: A Peer-to-Peer Electronic Cash System">
-    <meta property="og:description" content="比特币白皮书：一种点对点的电子现金系统 - 中本聪的原创论文，详细阐述了比特币的运作原理和技术基础">
-    <meta property="og:type" content="article">
-    <link rel="icon" type="image/svg+xml" href="Bitcoin.svg">
-    <link rel="apple-touch-icon" href="Bitcoin.svg">
-    <title>比特币白皮书 - Bitcoin: A Peer-to-Peer Electronic Cash System</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>感谢你，中本聪 | Thank You Satoshi Nakamoto</title>
+    <meta name="description" content="一个向比特币创造者中本聪致敬的网站">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bitcoin: '#F7931A',
+                    },
+                    fontFamily: {
+                        mono: ['SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'monospace'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .fade-in {
+                animation: fadeIn 0.8s ease-in-out;
+            }
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <nav class="language-selector">
-            <select id="languageSelect">
-                <option value="zh">中文</option>
-                <option value="en">English</option>
-                <option value="ja">日本語</option>
-                <option value="ko">한국어</option>
-                <option value="es">Español</option>
-                <option value="fr">Français</option>
-                <option value="de">Deutsch</option>
-                <option value="it">Italiano</option>
-                <option value="pt">Português</option>
-                <option value="ru">Русский</option>
-                <option value="tr">Türkçe</option>
-                <option value="ar">العربية</option>
-                <option value="he">עברית</option>
-                <option value="hi">हिन्दी</option>
-                <option value="id">Bahasa Indonesia</option>
-                <option value="th">ไทย</option>
-                <option value="vi">Tiếng Việt</option>
-                <option value="fa">فارسی</option>
-                <option value="el">Ελληνικά</option>
-                <option value="pl">Polski</option>
-                <option value="nl">Nederlands</option>
-            </select>
-        </nav>
-    </header>
-
-    <main>
-        <h1>比特币：一种点对点的电子现金系统</h1>
-        <div class="genesis-quote" data-lang="zh">
-            <div class="original-quote">The Times 03/Jan/2009 Chancellor on brink of second bailout for banks.</div>
-            <div class="translated-quote">泰晤士报 2009年1月3日：财政大臣在实施第二轮银行紧急援助的边缘</div>
+<body class="bg-black text-white min-h-screen flex flex-col items-center justify-center p-4 font-mono">
+    <div class="max-w-2xl w-full text-center space-y-12">
+        <!-- 创世区块信息 -->
+        <div class="space-y-6">
+            <p class="text-gray-500 text-sm tracking-wider">2008-10-31</p>
+            <h1 class="text-[clamp(1.5rem,4vw,2.5rem)] font-bold text-shadow">比特币：一种点对点的电子现金系统</h1>
+            <div class="border-t border-gray-800 w-32 mx-auto"></div>
+            <blockquote class="text-gray-400 text-sm italic leading-relaxed">
+                "The Times 03/Jan/2009 Chancellor on brink of second bailout for banks."
+                <br>
+                <span class="text-gray-600">泰晤士报 2009年1月3日：财政大臣在实施第二轮银行紧急援助的边缘</span>
+            </blockquote>
         </div>
-        <div class="author">Satoshi Nakamoto</div>
-        <div class="date">2008年10月31日</div>
 
-        <section class="download-section">
-            <h2>下载比特币白皮书</h2>
-            <div class="download-grid">
-                <div class="download-item">
-                    <h3>中文版</h3>
-                    <a href="https://bitcoin.org/files/bitcoin-paper/bitcoin_zh_cn.pdf" class="download-button">PDF 下载</a>
-                </div>
-                <div class="download-item">
-                    <h3>English (原版)</h3>
-                    <a href="https://bitcoin.org/bitcoin.pdf" class="download-button">PDF Download</a>
-                </div>
-                <div class="download-item">
-                    <h3>日本語</h3>
-                    <a href="https://bitcoin.org/files/bitcoin-paper/bitcoin_jp.pdf" class="download-button">PDF ダウンロード</a>
-                </div>
-                <div class="download-item">
-                    <h3>한국어</h3>
-                    <a href="https://bitcoin.org/files/bitcoin-paper/bitcoin_ko.pdf" class="download-button">PDF 다운로드</a>
-                </div>
-                <div class="download-item">
-                    <h3>Español</h3>
-                    <a href="https://bitcoin.org/files/bitcoin-paper/bitcoin_es.pdf" class="download-button">PDF Descargar</a>
-                </div>
-                <div class="download-item">
-                    <h3>Français</h3>
-                    <a href="https://bitcoin.org/files/bitcoin-paper/bitcoin_fr.pdf" class="download-button">PDF Télécharger</a>
-                </div>
-                <div class="download-item">
-                    <h3>Deutsch</h3>
-                    <a href="https://bitcoin.org/files/bitcoin-paper/bitcoin_de.pdf" class="download-button">PDF Herunterladen</a>
-                </div>
-                <div class="download-item">
-                    <h3>Italiano</h3>
-                    <a href="https://bitcoin.org/files/bitcoin-paper/bitcoin_it.pdf" class="download-button">PDF Scarica</a>
-                </div>
-                <div class="download-item">
-                    <h3>Português</h3>
-                    <a href="https://bitcoin.org/files/bitcoin-paper/bitcoin_pt_br.pdf" class="download-button">PDF Baixar</a>
-                </div>
-                <div class="download-item">
-                    <h3>Русский</h3>
-                    <a href="https://bitcoin.org/files/bitcoin-paper/bitcoin_ru.pdf" class="download-button">PDF Скачать</a>
-                </div>
-                <div class="download-item">
-                    <h3>Türkçe</h3>
-                    <a href="https://bitcoin.org/files/bitcoin-paper/bitcoin_tr.pdf" class="download-button">PDF İndir</a>
-                </div>
-                <div class="download-item">
-                    <h3>العربية</h3>
-                    <a href="https://bitcoin.org/files/bitcoin-paper/bitcoin_ar.pdf" class="download-button">PDF تحميل</a>
-                </div>
-                <div class="download-item">
-                    <h3>עברית</h3>
-                    <a href="https://bitcoin.org/files/bitcoin-paper/bitcoin_he.pdf" class="download-button">PDF הורדה</a>
-                </div>
-                <div class="download-item">
-                    <h3>हिन्दी</h3>
-                    <a href="https://bitcoin.org/files/bitcoin-paper/bitcoin_hi.pdf" class="download-button">PDF डाउनलोड</a>
-                </div>
-                <div class="download-item">
-                    <h3>Bahasa Indonesia</h3>
-                    <a href="https://bitcoin.org/files/bitcoin-paper/bitcoin_id.pdf" class="download-button">PDF Unduh</a>
-                </div>
-                <div class="download-item">
-                    <h3>ไทย</h3>
-                    <a href="https://bitcoin.org/files/bitcoin-paper/bitcoin_th.pdf" class="download-button">PDF ดาวน์โหลด</a>
-                </div>
-                <div class="download-item">
-                    <h3>Tiếng Việt</h3>
-                    <a href="https://bitcoin.org/files/bitcoin-paper/bitcoin_vi.pdf" class="download-button">PDF Tải xuống</a>
-                </div>
-                <div class="download-item">
-                    <h3>فارسی</h3>
-                    <a href="https://bitcoin.org/files/bitcoin-paper/bitcoin_fa.pdf" class="download-button">PDF دانلود</a>
-                </div>
-                <div class="download-item">
-                    <h3>Ελληνικά</h3>
-                    <a href="https://bitcoin.org/files/bitcoin-paper/bitcoin_el.pdf" class="download-button">PDF Λήψη</a>
-                </div>
-                <div class="download-item">
-                    <h3>Polski</h3>
-                    <a href="https://bitcoin.org/files/bitcoin-paper/bitcoin_pl.pdf" class="download-button">PDF Pobierz</a>
-                </div>
-                <div class="download-item">
-                    <h3>Nederlands</h3>
-                    <a href="https://bitcoin.org/files/bitcoin-paper/bitcoin_nl.pdf" class="download-button">PDF Downloaden</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-content">
-            <div class="creator-info">
-                <p>个人主页：<a href="https://www.xiaowuleyi.com" target="_blank">https://www.xiaowuleyi.com</a></p>
-                <p>联系：<a href="mailto:xiaowuleyi@gmail.com">xiaowuleyi@gmail.com</a></p> 
-                <div class="bitcoin-donation">比特币赞赏：<span class="bitcoin-address">3KLy733p6vQDyaKdEY61iGdQPf9pYt9hPv</span><div class="qr-code"></div></div>
-            </div>
-            <div class="copyright">© Bitcoin Project 2009-2025 Released under the MIT license</div>
+        <!-- 多语言感谢语 -->
+        <div class="h-16 flex items-center justify-center">
+            <p id="thank-you" class="text-[clamp(1.8rem,5vw,3rem)] font-bold text-bitcoin fade-in">
+                感谢你，中本聪
+            </p>
         </div>
+
+        <!-- 署名 -->
+        <p class="text-gray-600 text-sm">Satoshi Nakamoto</p>
+    </div>
+
+    <!-- 底部日期 -->
+    <footer class="absolute bottom-8 text-gray-700 text-xs">
+        2008.10.31 — 永远
     </footer>
-    <script src="js/main.js"></script>
-    <script defer src="https://a.xiaowuleyi.com/tracker.min.js" data-website-id="小吴乐意-bitcoin"></script>
+
+    <script>
+        // 多语言感谢语列表
+        const thankYous = [
+            { text: "感谢你，中本聪", lang: "zh" },
+            { text: "Thank you, Satoshi Nakamoto", lang: "en" },
+            { text: "ありがとう、サトシ・ナカモト", lang: "ja" },
+            { text: "고마워요, 사토시 나카모토", lang: "ko" },
+            { text: "Gracias, Satoshi Nakamoto", lang: "es" },
+            { text: "Merci, Satoshi Nakamoto", lang: "fr" },
+            { text: "Danke, Satoshi Nakamoto", lang: "de" },
+            { text: "Grazie, Satoshi Nakamoto", lang: "it" },
+            { text: "Obrigado, Satoshi Nakamoto", lang: "pt" },
+            { text: "Спасибо, Сатоши Накамото", lang: "ru" },
+            { text: "Teşekkürler, Satoshi Nakamoto", lang: "tr" },
+            { text: "شكراً لك، ساتوشي ناكاموتو", lang: "ar" },
+            { text: "תודה לך, סטושי נקמוטו", lang: "he" },
+            { text: "धन्यवाद, सतोशी नाकामोतो", lang: "hi" },
+            { text: "Terima kasih, Satoshi Nakamoto", lang: "id" },
+            { text: "ขอบคุณค่ะ ซาโตชิ นากาโมโตะ", lang: "th" },
+            { text: "Cảm ơn bạn, Satoshi Nakamoto", lang: "vi" },
+            { text: "Ευχαριστώ, Σατόσι Νακαμότο", lang: "el" },
+            { text: "Dziękuję, Satoshi Nakamoto", lang: "pl" },
+            { text: "Dank je, Satoshi Nakamoto", lang: "nl" },
+            { text: "شکریہ، ساتوشی ناکاموتو", lang: "fa" }
+        ];
+
+        let currentIndex = 0;
+        const thankYouElement = document.getElementById('thank-you');
+
+        function changeLanguage() {
+            currentIndex = (currentIndex + 1) % thankYous.length;
+            thankYouElement.classList.remove('fade-in');
+            
+            // 触发重绘以重新播放动画
+            void thankYouElement.offsetWidth;
+            
+            thankYouElement.textContent = thankYous[currentIndex].text;
+            thankYouElement.classList.add('fade-in');
+        }
+
+        // 每4秒切换一种语言
+        setInterval(changeLanguage, 4000);
+    </script>
 </body>
 </html>
