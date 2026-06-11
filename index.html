@@ -5,68 +5,139 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>感谢你，中本聪 | Thank You Satoshi Nakamoto</title>
     <meta name="description" content="一个向比特币创造者中本聪致敬的网站">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        bitcoin: '#F7931A',
-                    },
-                    fontFamily: {
-                        mono: ['SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'monospace'],
-                    },
-                }
-            }
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'unsafe-inline' 'self'; style-src 'unsafe-inline' 'self'">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-    </script>
-    <style type="text/tailwindcss">
-        @layer utilities {
-            .text-shadow {
-                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            }
-            .fade-in {
-                animation: fadeIn 0.8s ease-in-out;
-            }
-            @keyframes fadeIn {
-                from { opacity: 0; transform: translateY(10px); }
-                to { opacity: 1; transform: translateY(0); }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'SF Mono', Monaco, Inconsolata, 'Roboto Mono', monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 640px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .date {
+            color: #6b7280;
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+            margin-bottom: 1.5rem;
+        }
+
+        .title {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .divider {
+            width: 8rem;
+            height: 1px;
+            background-color: #374151;
+            margin: 0 auto 1.5rem auto;
+        }
+
+        .genesis-quote {
+            color: #9ca3af;
+            font-size: 0.875rem;
+            font-style: italic;
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        .genesis-quote .translation {
+            color: #6b7280;
+            display: block;
+            margin-top: 0.5rem;
+        }
+
+        .thank-you-container {
+            height: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+
+        .thank-you {
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            font-weight: 700;
+            color: #F7931A;
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+        }
+
+        .thank-you.fade-out {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        .signature {
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 2rem;
+            color: #4b5563;
+            font-size: 0.75rem;
+        }
+
+        @media (max-width: 640px) {
+            .genesis-quote {
+                font-size: 0.75rem;
             }
         }
     </style>
 </head>
-<body class="bg-black text-white min-h-screen flex flex-col items-center justify-center p-4 font-mono">
-    <div class="max-w-2xl w-full text-center space-y-12">
+<body>
+    <div class="container">
         <!-- 创世区块信息 -->
-        <div class="space-y-6">
-            <p class="text-gray-500 text-sm tracking-wider">2008-10-31</p>
-            <h1 class="text-[clamp(1.5rem,4vw,2.5rem)] font-bold text-shadow">比特币：一种点对点的电子现金系统</h1>
-            <div class="border-t border-gray-800 w-32 mx-auto"></div>
-            <blockquote class="text-gray-400 text-sm italic leading-relaxed">
-                "The Times 03/Jan/2009 Chancellor on brink of second bailout for banks."
-                <br>
-                <span class="text-gray-600">泰晤士报 2009年1月3日：财政大臣在实施第二轮银行紧急援助的边缘</span>
-            </blockquote>
-        </div>
+        <p class="date">2008-10-31</p>
+        <h1 class="title">比特币：一种点对点的电子现金系统</h1>
+        <div class="divider"></div>
+        <blockquote class="genesis-quote">
+            "The Times 03/Jan/2009 Chancellor on brink of second bailout for banks."
+            <span class="translation">泰晤士报 2009年1月3日：财政大臣在实施第二轮银行紧急援助的边缘</span>
+        </blockquote>
 
         <!-- 多语言感谢语 -->
-        <div class="h-16 flex items-center justify-center">
-            <p id="thank-you" class="text-[clamp(1.8rem,5vw,3rem)] font-bold text-bitcoin fade-in">
+        <div class="thank-you-container">
+            <p id="thank-you" class="thank-you">
                 感谢你，中本聪
             </p>
         </div>
 
         <!-- 署名 -->
-        <p class="text-gray-600 text-sm">Satoshi Nakamoto</p>
+        <p class="signature">Satoshi Nakamoto</p>
     </div>
 
     <!-- 底部日期 -->
-    <footer class="absolute bottom-8 text-gray-700 text-xs">
+    <footer>
         2008.10.31 — 永远
     </footer>
 
     <script>
-        // 多语言感谢语列表
+        // 多语言感谢语列表（包含你截图中出现的西班牙语）
         const thankYous = [
             { text: "感谢你，中本聪", lang: "zh" },
             { text: "Thank you, Satoshi Nakamoto", lang: "en" },
@@ -95,14 +166,15 @@
         const thankYouElement = document.getElementById('thank-you');
 
         function changeLanguage() {
-            currentIndex = (currentIndex + 1) % thankYous.length;
-            thankYouElement.classList.remove('fade-in');
+            // 添加淡出动画
+            thankYouElement.classList.add('fade-out');
             
-            // 触发重绘以重新播放动画
-            void thankYouElement.offsetWidth;
-            
-            thankYouElement.textContent = thankYous[currentIndex].text;
-            thankYouElement.classList.add('fade-in');
+            // 等待淡出完成后切换文字并淡入
+            setTimeout(() => {
+                currentIndex = (currentIndex + 1) % thankYous.length;
+                thankYouElement.textContent = thankYous[currentIndex].text;
+                thankYouElement.classList.remove('fade-out');
+            }, 400);
         }
 
         // 每4秒切换一种语言
